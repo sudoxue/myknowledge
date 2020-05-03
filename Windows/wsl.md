@@ -17,5 +17,5 @@ You need to change to mnt\c\
 cd /mnt/c
 
 ```
-![result](/Windows/images/sf.png)
+![result]("https://github.com/sudoxue/Genesis/blob/master/Windows/images/sf.PNG")
 
