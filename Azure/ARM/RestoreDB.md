@@ -2,6 +2,30 @@
 # ARM template FAQs
 Answer: There are so many of them, there is no way you can remember all of that. 
         Microsoft.ContainerService resource types-managedClusters
+### How "dependson" works
+Resource Manager evaluates the dependencies between resources, and deploys them in their dependent order. When resources aren't dependent on each other, Resource Manager deploys them in parallel. You only need to define dependencies for resources that are deployed in the same template. 
+
+### What is the difference between resource dependencies and Conditional deploy?
+1. Conditionally deploy evaluate the statement is true or false dependencies does not. 
+```
+{
+    "condition": "[equals(parameters('newOrExisting), 'new')]",
+    "dependsOn": "[variables("loadbalancerName")]
+}
+
+```
+2. How to set to subscription you want to deploy stuff.
+
+<img src="https://aka.ms/deploytoazurebutton"/>
+https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-1vm-2nics-2subnets-1vnet%2Fazuredeploy.json" target="_blank">
+    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
+</a>
+
+3. Can I deploy subscription level resources?
+ [Here is the link](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription#create-roles)
+
 
 <!-- Italics -->
 This text* is italic
